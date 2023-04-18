@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Layout from "./Layout";
 import User from "./User";
-
+import Admin from "./Admin";
 const mockEmployees = [
   {
     id: 0,
@@ -28,14 +28,21 @@ const Home = () => {
   const [employee, setEmployee] = useState(mockEmployees);
   const [sector, setSector] = useState();
 
+  const handleUserBtn = () => {
+    setSector("user");
+  };
+  const handleAdminBtn = () => {
+    setSector("admin");
+  };
+
   return (
     <Layout>
       <h1>
         Generation Thailand <br /> Rect - Assessment
       </h1>
-      <button>User Home Sector</button>
-      <button>Admin Home Sector</button>
-      <User employees={employee} />
+      <button onClick={handleUserBtn}>User Home Sector</button>
+      <button onClick={handleAdminBtn}>Admin Home Sector</button>
+      {sector === "user" ? <User employees={employee} /> : <Admin />}
     </Layout>
   );
 };
