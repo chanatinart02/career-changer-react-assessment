@@ -3,6 +3,7 @@ import { useState } from "react";
 import Layout from "./Layout";
 import User from "./User";
 import Admin from "./Admin";
+
 const mockEmployees = [
   {
     id: 0,
@@ -27,6 +28,9 @@ const mockEmployees = [
 const Home = () => {
   const [employee, setEmployee] = useState(mockEmployees);
   const [sector, setSector] = useState();
+  // const [name, setName] = useState("");
+  // const [lastname, setLastname] = useState("");
+  // const [position, setPosition] = useState("");
 
   const handleUserBtn = () => {
     setSector("user");
@@ -42,7 +46,13 @@ const Home = () => {
       </h1>
       <button onClick={handleUserBtn}>User Home Sector</button>
       <button onClick={handleAdminBtn}>Admin Home Sector</button>
-      {sector === "user" ? <User employees={employee} /> : <Admin />}
+      {sector === "user" ? (
+        <User employee={employee} />
+      ) : sector === "admin" ? (
+        <Admin employee={employee} setEmployee={setEmployee} />
+      ) : (
+        <div></div>
+      )}
     </Layout>
   );
 };

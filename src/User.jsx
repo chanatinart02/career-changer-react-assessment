@@ -1,16 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const User = ({ employees }) => {
-  const showEmployee = employees.map((employee) => {
-    return (
-      <tr>
-        <td>{employee.name}</td>
-        <td>{employee.lastname}</td>
-        <td>{employee.position}</td>
-      </tr>
-    );
-  });
-
+const User = ({ employee }) => {
   return (
     <>
       <table>
@@ -21,7 +11,17 @@ const User = ({ employees }) => {
             <th>Position</th>
           </tr>
         </thead>
-        <tbody>{showEmployee}</tbody>
+        <tbody>
+          {employee.map((employee) => {
+            return (
+              <tr>
+                <td>{employee.name}</td>
+                <td>{employee.lastname}</td>
+                <td>{employee.position}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
