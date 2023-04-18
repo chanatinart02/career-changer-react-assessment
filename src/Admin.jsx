@@ -23,6 +23,10 @@ const Admin = ({ employee, setEmployee }) => {
     setPosition("");
   };
 
+  const removeEmployee = (index) => {
+    setEmployee((prevState) => prevState.filter((_, i) => i !== index));
+  };
+
   return (
     <>
       <h3>Create user here</h3>
@@ -66,14 +70,14 @@ const Admin = ({ employee, setEmployee }) => {
           </tr>
         </thead>
         <tbody>
-          {employee.map((employee) => {
+          {employee.map((employee, index) => {
             return (
-              <tr>
+              <tr key={index}>
                 <td>{employee.name}</td>
                 <td>{employee.lastname}</td>
                 <td>{employee.position}</td>
                 <td>
-                  <button>Remove</button>
+                  <button onClick={() => removeEmployee(index)}>Remove</button>
                 </td>
               </tr>
             );
