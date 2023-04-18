@@ -3,7 +3,7 @@ import Layout from "./Layout";
 const Owner = ()=> {
     return(
         <Layout>
-            <div>
+            <div className="container">
         <h1>Gift - Group D - 06</h1>
         <img src="/src/assets/img/Avatar-Maker.png" alt="avatar" width={300}/>
         <div className="info">
