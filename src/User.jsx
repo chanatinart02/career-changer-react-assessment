@@ -2,7 +2,7 @@ import React from "react";
 
 const User = ({ employee }) => {
   return (
-    <>
+    <div className="center">
       <table>
         <thead>
           <tr>
@@ -23,7 +23,7 @@ const User = ({ employee }) => {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

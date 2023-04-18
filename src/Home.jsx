@@ -30,7 +30,7 @@ const Home = () => {
   const [sector, setSector] = useState();
   const [text, setText] = useState(
     <h1>
-      Generation Thailand <br /> Rect - Assessment
+      Generation Thailand <br /> React - Assessment
     </h1>
   );
 

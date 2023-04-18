@@ -30,7 +30,7 @@ const Admin = ({ employee, setEmployee }) => {
   return (
     <>
       <h3>Create user here</h3>
-      <div>
+      <div className="center">
         <input
           type="text"
           name="name"
@@ -58,32 +58,38 @@ const Admin = ({ employee, setEmployee }) => {
           }}
           value={position}
         />
-        <button onClick={handleSave}>Save</button>
+        <button className="save" onClick={handleSave}>
+          Save
+        </button>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employee.map((employee, index) => {
-            return (
-              <tr key={index}>
-                <td>{employee.name}</td>
-                <td>{employee.lastname}</td>
-                <td>{employee.position}</td>
-                <td>
-                  <button onClick={() => removeEmployee(index)}>Remove</button>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className="center">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Position</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {employee.map((employee, index) => {
+              return (
+                <tr key={index}>
+                  <td>{employee.name}</td>
+                  <td>{employee.lastname}</td>
+                  <td>{employee.position}</td>
+                  <td>
+                    <button onClick={() => removeEmployee(index)}>
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };

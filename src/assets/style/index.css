@@ -29,11 +29,25 @@ li a {
 h1 {
   text-align: center;
   color: var(--headline);
+  margin-bottom: 0;
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.column p {
+  width: 50%;
+  font-size: 18px;
+  margin-top: 0;
 }
 
 button {
@@ -51,10 +65,52 @@ button:hover {
   font-size: 24px;
   height: 50px;
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 /* table */
 table {
-  width: 100%;
-  border: 1px solid;
+  border-collapse: collapse;
+  width: 50%;
+  margin-top: 20px;
+}
+
+table td,
+#table th {
+  border: 1px solid var(--headline);
+  padding: 8px;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--headline);
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 10px;
+  width: 20%;
+  font-size: inherit;
+  margin-right: 20px;
+}
+
+.save {
+  font-size: 18px;
+  padding: 10px;
 }
