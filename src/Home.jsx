@@ -1,41 +1,43 @@
-import React from "react"
-import { useState } from "react"
-import Layout from "./Layout"
+import React from "react";
+import { useState } from "react";
+import Layout from "./Layout";
+import User from "./User";
 
 const mockEmployees = [
   {
     id: 0,
     name: "mock",
-    lastname: 'mocklastname',
-    position: "Manager"
+    lastname: "mocklastname",
+    position: "Manager",
   },
   {
     id: 1,
     name: "employee 1",
     lastname: "em",
-    position: "Engineer"
+    position: "Engineer",
   },
   {
     id: 2,
     name: "employee 2",
     lastname: "lord",
-    position: "Designer"
+    position: "Designer",
   },
-]
+];
 
 const Home = () => {
-const [employee, setEmployee] = useState()
-const [sector, setSector] = useState()
+  const [employee, setEmployee] = useState(mockEmployees);
+  const [sector, setSector] = useState();
 
   return (
-      <Layout>
-        <h1>Generation Thailand <br /> Rect - Assessment</h1>
-        <button>User Home Sector</button>
-        <button>Admin Home Sector</button>
-      </Layout>
-  )
-}
+    <Layout>
+      <h1>
+        Generation Thailand <br /> Rect - Assessment
+      </h1>
+      <button>User Home Sector</button>
+      <button>Admin Home Sector</button>
+      <User employees={employee} />
+    </Layout>
+  );
+};
 
-
-
-export default Home
+export default Home;
