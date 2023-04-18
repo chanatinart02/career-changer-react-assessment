@@ -1,5 +1,6 @@
 import React from "react"
 import { useState } from "react"
+import Navbar from "./Navbar"
 
 const mockEmployees = [
   {
@@ -28,7 +29,7 @@ const [sector, setSector] = useState()
 
   return (
     <div>
-
+      <Navbar />
     </div>
   )
 }

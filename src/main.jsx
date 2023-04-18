@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './assets/style/index.css'
 import Home from './Home';
-import Admin from './Admin';
+// import Admin from './Admin';
 import Owner from './Owner';
 
 import {
