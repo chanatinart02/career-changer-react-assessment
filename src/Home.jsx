@@ -1,3 +1,6 @@
+import React from "react"
+import { useState } from "react"
+
 const mockEmployees = [
   {
     id: 0,
@@ -20,6 +23,8 @@ const mockEmployees = [
 ]
 
 const Home = () => {
+const [employee, setEmployee] = useState()
+const [sector, setSector] = useState()
 
   return (
     <div>
