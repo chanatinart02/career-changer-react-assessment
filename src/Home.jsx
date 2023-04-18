@@ -28,24 +28,40 @@ const mockEmployees = [
 const Home = () => {
   const [employee, setEmployee] = useState(mockEmployees);
   const [sector, setSector] = useState();
-  // const [name, setName] = useState("");
-  // const [lastname, setLastname] = useState("");
-  // const [position, setPosition] = useState("");
+  const [text, setText] = useState(
+    <h1>
+      Generation Thailand <br /> Rect - Assessment
+    </h1>
+  );
 
   const handleUserBtn = () => {
     setSector("user");
+    setText(
+      <h1>
+        Generation Thailand <br /> Home - User Sector
+      </h1>
+    );
   };
   const handleAdminBtn = () => {
     setSector("admin");
+    setText(
+      <h1>
+        Generation Thailand <br /> Home - Admin Sector
+      </h1>
+    );
   };
 
   return (
     <Layout>
-      <h1>
-        Generation Thailand <br /> Rect - Assessment
-      </h1>
-      <button onClick={handleUserBtn}>User Home Sector</button>
-      <button onClick={handleAdminBtn}>Admin Home Sector</button>
+      {text}
+      <div className="center">
+        <button className="modeBtn" onClick={handleUserBtn}>
+          User Home Sector
+        </button>
+        <button className="modeBtn" onClick={handleAdminBtn}>
+          Admin Home Sector
+        </button>
+      </div>
       {sector === "user" ? (
         <User employee={employee} />
       ) : sector === "admin" ? (
