@@ -5,7 +5,11 @@ const Owner = () => {
     <Layout>
       <h1>Gift - Group D - 06</h1>
       <div className="center column">
-        <img src="/src/assets/img/Avatar-Maker.png" alt="avatar" width={300} />
+        <img
+          src="https://github.com/chanatinart02/career-changer-react-assessment/blob/main/src/assets/img/Avatar-Maker.png?raw=true"
+          alt="avatar"
+          width={300}
+        />
         <div className="column">
           <h2>Short Biography:</h2>
           <p>
